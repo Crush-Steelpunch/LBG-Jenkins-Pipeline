@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Hello') {
             steps {
                 git branch: 'main', url: 'https://github.com/Crush-Steelpunch/LGB-Incubation-Labs.git'
